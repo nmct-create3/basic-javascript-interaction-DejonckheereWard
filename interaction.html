@@ -14,9 +14,9 @@
         <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
         <link rel="manifest" href="site.webmanifest">
         <link rel="mask-icon" href="safari-pinned-tab.svg" color="#3385FF">
-
+        <script src="script/app.js"></script>
         <link rel="stylesheet" href="css/normalize.css">
-		<link rel="stylesheet" href="css/screen.css">
+		    <link rel="stylesheet" href="css/screen.css">
     </head>
     <body>
         <section class="o-row o-row--lg o-row--login o-row--beta">
@@ -47,7 +47,15 @@
 								<span class="c-password-toggle-container">
 									<input class="c-input c-input--password-with-toggle js-password-input" type="password" name="password" id="password"
 									 required>
-									<!-- Password toggle -->
+                   <span class="c-toggle-password">
+                     <input type="checkbox" id="toggleCheckbox" class="o-hide-accessible c-input-password__checkbox" checked>
+                     <label for="toggleCheckbox" class="c-toggle-password__label">
+                       <span class="-o-hide-accessible">
+                         Show Password
+                       </span>
+                     </label>
+                   </span>
+
 									<!-- TODO: add password toggle -->
 								</span>
 							</p>

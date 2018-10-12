@@ -601,6 +601,11 @@ input::placeholder {
     Everything form related here
 */
 
+.c-form-field {
+  position: relative;
+}
+
+
 .c-form-field--option {
     display: -webkit-flex;
     display: -ms-flex;
@@ -674,7 +679,29 @@ more padding on the right to avoid overlap
     font-size: 14px;
     line-height: 16px;
     color: var(--color-neutral-x-dark);
+
 }
+
+.c-label--floating {
+  position: absolute;
+  top: 12px;
+  left: 8px;
+  padding: 4px 8px;
+  will-change: transform;
+  transform: translateY( 0 );
+  transition: transform 200ms ease-in-out;
+  box-shadow: 0 0 4px 4px rgba(255,255,255,0.8);
+  background: white;
+}
+
+.is-floating {
+  transform: translateY( -24px );
+}
+
+.c-input:focus + .c-label {
+  transform: translateY( -24px );
+}
+
 
 /*
     Component: Dropdown Button
@@ -964,6 +991,47 @@ Component: Password Toggle
 ---
 Password toggle custom checkbox
 */
+
+.c-input--password-with-toggle{
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    -ms-align-items: center;
+    align-items: center;
+    padding-bottom: 0;
+
+}
+
+.c-input--password-with-toggle:checked{
+  display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    -ms-align-items: center;
+    align-items: center;
+    padding-bottom: 0;
+}
+
+.c-password-toggle{
+  display: block;
+}
+
+.c-password-toggle__symbol {
+    width: 24px;
+    height: 24px;
+    /* position: absolute; */
+    top: 12px;
+    right: 12px;
+    pointer-events: none;
+    fill: var(--color-neutral-x-light);
+}
+
+.c-input-password__checkbox:checked + .c-toggle-password__label{
+  background-color: red;
+}
+
+.c-input-password__checkbox:checked + .c-toggle-password__label{
+  background-color: blue;
+}
 
 
 /*
