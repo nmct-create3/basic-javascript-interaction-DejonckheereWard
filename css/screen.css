@@ -992,53 +992,114 @@ Component: Password Toggle
 Password toggle custom checkbox
 */
 
-.c-input--password-with-toggle{
-    display: -webkit-flex;
-    display: -ms-flex;
-    display: flex;
-    -ms-align-items: center;
-    align-items: center;
-    padding-bottom: 0;
 
-}
-
-.c-input--password-with-toggle:checked{
-  display: -webkit-flex;
-    display: -ms-flex;
-    display: flex;
-    -ms-align-items: center;
-    align-items: center;
-    padding-bottom: 0;
-}
 
 .c-password-toggle{
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.c-password-toggle-container{
+  position: relative;
   display: block;
 }
 
 .c-password-toggle__symbol {
-    width: 24px;
-    height: 24px;
-    /* position: absolute; */
-    top: 12px;
-    right: 12px;
-    pointer-events: none;
-    fill: var(--color-neutral-x-light);
+  display: block;
+  width: 20px;
+  height: 20px;
+  fill: var(--color-neutral-x-light);
 }
 
-.c-input-password__checkbox:checked + .c-toggle-password__label{
-  background-color: red;
+.c-toggle-password__label{
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -ms-align-items: center;
+  align-items: center;
+  padding: 0px 16px;
+  height: 100%
 }
 
-.c-input-password__checkbox:checked + .c-toggle-password__label{
-  background-color: blue;
+.c-input-password__checkbox:checked + .c-toggle-password__label .c-password-toggle__symbol--hide{
+  display: none;
 }
 
+.c-input-password__checkbox:checked + .c-toggle-password__label .c-password-toggle__symbol--show{
+  display: block;
+}
+
+
+.c-input-password__checkbox + .c-toggle-password__label .c-password-toggle__symbol--hide{
+  display: block;
+}
+
+.c-input-password__checkbox + .c-toggle-password__label .c-password-toggle__symbol--show{
+  display: none;
+}
 
 /*
 	Component: Custom Like
 	---
 	Custom like button
 */
+
+
+/*
+
+Component: Range input / slider
+
+*/
+
+.c-range{
+  value="0", min="0", max="100".
+  display: block;
+  height: 8px;
+  padding: 0;
+  border-radius: 8px;
+  background-color: var(--color-neutral-xxxx-light);
+  border: 1px solid var(--color-neutral-xxx-light);
+}
+
+.c-range-holder{
+  width: calc( 100% - 18px );
+}
+
+.c-range-holder::after{
+  content: attr(data-value);
+  display: inline-block;
+  width: 32px;
+  margin-top: 12px;
+  padding: 4px;
+  font-size: .8rem;
+  text-align: center;
+  border-radius: 4px;
+  background: var( --color-neutral-xxxx-light );
+  transform: scale( 0 );
+  transition: transform 200ms ease-in-out;
+  transform-origin: center top;
+}
+
+::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 8px;
+  background: var(--color-alpha );
+
+}
+
+::-moz-range-thumb{
+  -moz-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 8px;
+  background: var(--color-alpha );
+}
 
 
 /*------------------------------------*\

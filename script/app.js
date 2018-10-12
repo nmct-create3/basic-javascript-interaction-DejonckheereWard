@@ -3,6 +3,7 @@ document.addEventListener( 'DOMContentLoaded', function(){
         console.log( 'Script loaded!' );
 
         handleFloatingLabel();
+        handlePasswordSwitcher();
 
     });
 
@@ -21,3 +22,22 @@ function handleFloatingLabel(){
     }
   })
 };
+
+function handlePasswordSwitcher() {
+  let password = document.querySelector(".js-password-input");
+  let password__checkbox = document.querySelector("#toggleCheckbox");
+
+  password__checkbox.addEventListener("click", function(){
+    console.log("Password visibility clicked")
+    console.log(password.type)
+    if (password.type == "text"){
+      console.log("Password hidden")
+      password.type = "password"
+    }
+    else{
+      console.log("Password visible")
+      password.type = "text"
+    }
+  })
+
+}
